@@ -1,0 +1,39 @@
+<div class="row bg-danger">
+    <div class="col d-flex justify-content-start text-light contact">
+        <p class="mt-2 ml-3 mr-2"><i class="far fa-clock mr-1 fa-xs"></i>09 A 13 HS - 14 A 18 HS</p><span class="mt-2 or"> |</span><p class="mt-2 ml-2"><i class="fas fa-phone-alt fa-xs mr-1"></i>+54 9 11 9999-9999</p>
+    </div>
+    <div class="col d-flex justify-content-end">
+        <div class="border-r"><button class="btn btn-secondary mx-2" type="button">CARRITO / <span>{{0.00 | currency}}</span></button></div>
+        <div class="social-icon mx-3">
+            <span class="mx-1  contact text-light"><i class="fab fa-facebook-f"></i></span>
+            <span class="mx-1  contact text-light"><i class="fab fa-instagram"></i></span>
+            <span class="mx-1  contact text-light"><i class="fas fa-envelope"></i></span>
+            <span class="mx-1  contact text-light"><i class="fas fa-phone-alt fa-xs mr-1"></i></span>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-dark p-0 bg-light">
+    <a class="navbar-brand ml-4" (click)="goTo('')" href=""><span><img class="logo" src="../../../assets/img/logo-geekon.png" alt=""></span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  <div class="collapse navbar-collapse ml-5" id="navbarSupportedContent">
+      <ul class="navbar-nav text-center mx-auto">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle mt-2 text-light font-weight-bold" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              NUESTRAS MARCAS
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <div class="d-flex"><a class="dropdown-item text-muted font-weigth-bold" href="#"*ngFor="let title of data">{{title.name}}</a></div>
+              <a class="dropdown-item text-muted font-weigth-bold" href="#"*ngFor="let data of o">{{data.name}}</a>
+            </div>
+          </li>
+        <li class="nav-item mx-2 active" *ngFor="let link of data">
+          <a class="nav-link py-3 font-weight-bold pb-2" [routerLink]="['/'+goTo(link.nameLink)]">{{link.nameLink}}</a>
+        </li>
+      </ul>
+      <div class="search px-2 py-1 mr-3">
+        <i class="fas fa-search"></i>
+      </div>
+  </div>
+</nav>
